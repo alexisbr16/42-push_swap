@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 12:44:03 by abrisse           #+#    #+#             */
-/*   Updated: 2022/05/26 21:44:59 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/05/27 14:36:37 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ void	ft_sort_to_b(t_stack **a, t_stack **b);
 void	ft_sort_five(t_stack **a, t_stack **b);
 
 /* sorting-2.c */
+void	ft_sort_to_a(t_stack **a, t_stack **b);
+int		ft_max_on_top(t_stack *stack);
+int		ft_min_on_top(t_stack *stack);
+void	ft_align(t_stack **stack);
 
 /* utils.c */
 int		ft_free_stack(t_stack **stack);

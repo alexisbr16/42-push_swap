@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:18:40 by abrisse           #+#    #+#             */
-/*   Updated: 2022/05/27 13:02:19 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/05/27 14:38:30 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,14 @@ int	ft_is_sort(t_stack *stack)
 void	ft_sort(t_stack **a, t_stack **b)
 {
 	ft_sort_to_b(a, b);
-
-	ft_printf("STACK A\n=======\n");
-	ft_print_stack(*a);
-
-	ft_printf("STACK B\n=======\n");
-	ft_print_stack(*b);
-
 	ft_sort_five(a, b);
-//	ft_sort_to_a(a, b);
+	ft_sort_to_a(a, b);
 }
 
 void	ft_sort_to_b(t_stack **a, t_stack **b)
 {
 	(void)b;
 
-//	ft_printf("=== %d\n", (*a)->value);
-//	ft_printf("=== %d\n", (*a)->next->value);
-//	ft_printf("=== %d\n", (ft_stacklast(*a))->value);
 	while (ft_count_args(*a) > 5)
 	{
 		if (!(ft_count_below(*a) < ft_count_args(*a) * 0.3))
@@ -53,7 +43,6 @@ void	ft_sort_to_b(t_stack **a, t_stack **b)
 		else
 			ft_pb(a, b);
 	}
-//	ft_printf("=== %d\n", (*a)->value);
 }
 
 void	ft_sort_five(t_stack **a, t_stack **b)
