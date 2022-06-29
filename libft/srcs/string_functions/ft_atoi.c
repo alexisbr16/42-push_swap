@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 00:13:34 by abrisse           #+#    #+#             */
-/*   Updated: 2021/11/30 17:30:14 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 00:59:51 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static int	is_whitespace(char c)
 		|| c == '\f' || c == '\r' || c == ' ');
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	value;
-	int	sign;
+	long	value;
+	int		sign;
 
 	value = 0;
 	sign = 1;

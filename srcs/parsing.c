@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:13:26 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:28:18 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 01:05:36 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	check_int(char *str)
 {
 	if (ft_strlen(str) > 11)
 		return (0);
-	if (ft_atoi(str) > 2147483647 || ft_atoi(str) < -2147483648)
+	if (ft_atoi(str) > INT_MAX || ft_atoi(str) < INT_MIN)
 		return (0);
 	return (1);
 }
@@ -49,6 +49,20 @@ static int	check_duplicate(t_stack *stack, int value)
 		tmp = tmp->next;
 	}
 	return (1);
+}
+
+static char	**free_split(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (NULL);
 }
 
 int	ft_get_args(int ac, char **av, t_stack **stack)
@@ -75,7 +89,7 @@ int	ft_get_args(int ac, char **av, t_stack **stack)
 			ft_stackadd_back(stack, ft_stacknew(number));
 			j++;
 		}
-		// TODO : free_split
+		free_split(tab);
 	}
 	return (1);
 }

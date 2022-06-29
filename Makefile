@@ -4,8 +4,7 @@ NAME	= push_swap
 CC		= gcc
 CFLAGS	= -Wall		\
 		  -Wextra	\
-		  -Werror	\
-		  -g -fsanitize=address
+		  -Werror
 
 SRCS_PATH	= srcs/
 SRCS		= push_swap.c					\

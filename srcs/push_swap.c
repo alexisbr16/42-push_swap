@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:04:30 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:32:53 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 00:45:07 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 	int		len;
-	
+
 	if (ac <= 1)
 		return (0);
 	a = NULL;

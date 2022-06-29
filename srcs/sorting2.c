@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 18:23:36 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:35:45 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 00:33:35 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	ft_find_target(t_stack **a, t_stack **b)
 		tmp_a = *a;
 		while (tmp_a)
 		{
-			if (tmp_a->value > tmp_b->value && tmp_a->value < test)
+			if (tmp_a->index > tmp_b->index && tmp_a->index < test)
 			{
-				test = tmp_a->value;
+				test = tmp_a->index;
 				target = tmp_a->pos;
 			}
 			tmp_a = tmp_a->next;
@@ -54,9 +54,9 @@ int	ft_find_best_target(t_stack **a, int test, int target)
 	{
 		while (tmp_a)
 		{
-			if (tmp_a->value < test)
+			if (tmp_a->index < test)
 			{
-				test = tmp_a->value;
+				test = tmp_a->index;
 				target = tmp_a->pos;
 			}
 			tmp_a = tmp_a->next;

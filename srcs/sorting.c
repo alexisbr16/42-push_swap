@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 18:23:36 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:33:59 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 00:42:27 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	ft_sort(t_stack **a, t_stack **b)
 {
 	ft_push_first_half(a, b);
 	ft_sort_three(a);
+	ft_find_target(a, b);
+	ft_find_labor(a, b);
 	while (*b)
 	{
 		ft_find_target(a, b);
