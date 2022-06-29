@@ -1,0 +1,101 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/27 12:44:03 by abrisse           #+#    #+#             */
+/*   Updated: 2022/06/29 23:34:33 by abrisse          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <limits.h>
+# include "libft.h"
+
+typedef struct s_stack
+{
+	int				value;
+	int				index;
+	int				pos;
+	int				target_to_a;
+	int				labor_in_a;
+	int				labor_in_b;
+	struct s_stack	*next;
+}	t_stack;
+
+/* parsing.c */
+int		ft_get_args(int ac, char **av, t_stack **stack);
+
+/* utils-stack.c */
+t_stack	*ft_stacknew(int value);
+int		ft_stackfree(t_stack *stack);
+void	ft_stackadd_back(t_stack **stack, t_stack *new);
+t_stack	*ft_stacklast(t_stack *stack);
+
+/* utils-stack2.c */
+int		ft_stack_len(t_stack *stack);
+t_stack	*ft_stack_max(t_stack *stack);
+t_stack	*ft_stack_min(t_stack *stack);
+
+/* check_and_fix.c */
+int		ft_is_sort_not_align(t_stack *stack);
+int		ft_is_sort(t_stack *stack);
+void	ft_align(t_stack **stack, t_stack *el);
+
+/* sorting.c */
+void	ft_sort_three(t_stack **stack);
+void	ft_sort(t_stack **stack_a, t_stack **stack_b);
+void	ft_push_first_half(t_stack **stack_a, t_stack **stack_b);
+
+/* sorting2.c */
+void	ft_find_target(t_stack **a, t_stack **b);
+int		ft_find_best_target(t_stack **a, int test, int target);
+void	ft_find_labor(t_stack **a, t_stack **b);
+
+/* sorting3.c */
+void	ft_move(t_stack **a, t_stack **b);
+void	ft_best_operations(t_stack **a, t_stack **b, int labor_in_a, int labor_in_b);
+void	ft_labor_positive(t_stack **a, t_stack **b, int *labor_in_a, int *labor_in_b);
+void	ft_labor_negative(t_stack **a, t_stack **b, int *labor_in_a, int *labor_in_b);
+void	ft_end_labor(t_stack **stack, int *labor, char who);
+
+/* utils.c */
+int		ft_abs(int nb);
+void	ft_get_index(t_stack *stack, int ac);
+void	ft_get_position(t_stack **stack);
+
+/* operations-swap.c */
+void	ft_sa(t_stack **a);
+void	ft_sb(t_stack **b);
+void	ft_ss(t_stack **a, t_stack **b);
+
+/* operations-rotate.c */
+void	ft_ra(t_stack **a);
+void	ft_rb(t_stack **b);
+void	ft_rr(t_stack **a, t_stack **b);
+
+/* operations-reverse_rotate.c */
+void	ft_rra(t_stack **a);
+void	ft_rrb(t_stack **b);
+void	ft_rrr(t_stack **a, t_stack **b);
+
+/* operations-push.c */
+void	ft_pa(t_stack **a, t_stack **b);
+void	ft_pb(t_stack **a, t_stack **b);
+
+/* print-tool.c */
+void	ft_print_stack(t_stack *stack, char *name);
+void	ft_print(t_stack *a, t_stack *b);
+void	ft_print_index(t_stack *a, t_stack *b);
+void	ft_print_position(t_stack *a, t_stack *b);
+void	ft_print_target_a(t_stack *b);
+void	ft_print_labor_in_a(t_stack *b);
+void	ft_print_labor_in_b(t_stack *b);
+
+#endif
