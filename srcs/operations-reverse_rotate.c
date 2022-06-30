@@ -6,13 +6,13 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:20:31 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 11:51:36 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 14:16:31 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_reverse_rotate(t_stack **stack)
+void	ft_reverse_rotate(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*move;

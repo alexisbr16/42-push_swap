@@ -6,13 +6,13 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:15:09 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:19:21 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 14:15:55 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_push(t_stack **src, t_stack **dst)
+int	ft_push(t_stack **src, t_stack **dst)
 {
 	t_stack	*tmp;
 

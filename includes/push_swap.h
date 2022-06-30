@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 12:44:03 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/30 10:03:49 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 14:18:10 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,21 +76,25 @@ void	ft_get_position(t_stack **stack);
 char	**free_split(char **str);
 
 /* operations-swap.c */
+int		ft_swap(t_stack **stack);
 void	ft_sa(t_stack **a);
 void	ft_sb(t_stack **b);
 void	ft_ss(t_stack **a, t_stack **b);
 
 /* operations-rotate.c */
+void	ft_rotate(t_stack **stack);
 void	ft_ra(t_stack **a);
 void	ft_rb(t_stack **b);
 void	ft_rr(t_stack **a, t_stack **b);
 
 /* operations-reverse_rotate.c */
+void	ft_reverse_rotate(t_stack **stack);
 void	ft_rra(t_stack **a);
 void	ft_rrb(t_stack **b);
 void	ft_rrr(t_stack **a, t_stack **b);
 
 /* operations-push.c */
+int		ft_push(t_stack **src, t_stack **dst);
 void	ft_pa(t_stack **a, t_stack **b);
 void	ft_pb(t_stack **a, t_stack **b);
 
