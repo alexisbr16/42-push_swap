@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:03:13 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:11:36 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 08:56:38 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	ft_stackfree(t_stack *stack)
 void	ft_stackadd_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*last;
+
 	if (*stack == NULL)
 		*stack = new;
 	else
@@ -51,6 +52,7 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 		last->next = new;
 	}
 }
+
 t_stack	*ft_stacklast(t_stack *stack)
 {
 	while (stack && stack->next)

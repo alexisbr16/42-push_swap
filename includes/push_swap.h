@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 12:44:03 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:34:33 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 10:03:49 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ typedef struct s_stack
 	int				index;
 	int				pos;
 	int				target_to_a;
-	int				labor_in_a;
-	int				labor_in_b;
+	int				moves_in_a;
+	int				moves_in_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -52,23 +52,28 @@ void	ft_align(t_stack **stack, t_stack *el);
 void	ft_sort_three(t_stack **stack);
 void	ft_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_push_first_half(t_stack **stack_a, t_stack **stack_b);
+void	ft_do_sort(t_stack **a, t_stack **b);
 
 /* sorting2.c */
 void	ft_find_target(t_stack **a, t_stack **b);
 int		ft_find_best_target(t_stack **a, int test, int target);
-void	ft_find_labor(t_stack **a, t_stack **b);
+void	ft_find_moves(t_stack **a, t_stack **b); //find_labor
 
 /* sorting3.c */
 void	ft_move(t_stack **a, t_stack **b);
-void	ft_best_operations(t_stack **a, t_stack **b, int labor_in_a, int labor_in_b);
-void	ft_labor_positive(t_stack **a, t_stack **b, int *labor_in_a, int *labor_in_b);
-void	ft_labor_negative(t_stack **a, t_stack **b, int *labor_in_a, int *labor_in_b);
-void	ft_end_labor(t_stack **stack, int *labor, char who);
+void	ft_best_operations(t_stack **a, t_stack **b, int moves_in_a,
+			int moves_in_b);
+void	ft_moves_positive(t_stack **a, t_stack **b, int *moves_in_a,
+			int *moves_in_b);
+void	ft_moves_negative(t_stack **a, t_stack **b, int *moves_in_a,
+			int *moves_in_b);
+void	ft_end_moves(t_stack **stack, int *moves, char who);
 
 /* utils.c */
-int		ft_abs(int nb);
+long	ft_abs(int nb);
 void	ft_get_index(t_stack *stack, int ac);
 void	ft_get_position(t_stack **stack);
+char	**free_split(char **str);
 
 /* operations-swap.c */
 void	ft_sa(t_stack **a);

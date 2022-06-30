@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 18:23:36 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/30 00:42:27 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 10:22:40 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ void	ft_sort(t_stack **a, t_stack **b)
 	ft_push_first_half(a, b);
 	ft_sort_three(a);
 	ft_find_target(a, b);
-	ft_find_labor(a, b);
+	ft_find_moves(a, b);
 	while (*b)
 	{
 		ft_find_target(a, b);
-		ft_find_labor(a, b);
+		ft_find_moves(a, b);
 		ft_move(a, b);
 	}
 	if (!ft_is_sort(*a))
@@ -47,27 +47,39 @@ void	ft_sort(t_stack **a, t_stack **b)
 void	ft_push_first_half(t_stack **a, t_stack **b)
 {
 	int	i;
-	int	swapped;
+	int	count;
 	int	len;
 
 	i = 0;
-	swapped = 0;
+	count = 0;
 	len = ft_stack_len(*a);
-	while (len > 6 && i < len && swapped < (len / 2))
+	while (len > 6 && i < len && count < (len / 2))
 	{
 		if ((*a)->index <= (len / 2))
 		{
 			ft_pb(a, b);
-			swapped++;
+			count++;
 		}
 		else
 			ft_ra(a);
 		i++;
 	}
-	while (len - swapped > 3)
+	while (len - count > 3)
 	{
 		ft_pb(a, b);
-		swapped++;
+		count++;
 	}
 }
 
+void	ft_do_sort(t_stack **a, t_stack **b)
+{
+	int	len;
+
+	len = ft_stack_len(*a);
+	if (len == 2)
+		ft_sa(a);
+	else if (len == 3)
+		ft_sort_three(a);
+	else
+		ft_sort(a, b);
+}

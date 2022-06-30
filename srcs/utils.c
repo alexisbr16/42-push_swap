@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:13:26 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:32:40 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 09:07:39 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,23 @@ void	ft_get_position(t_stack **stack)
 	}
 }
 
-int	ft_abs(int nb)
+long	ft_abs(int nb)
 {
 	if (nb < 0)
 		return (-nb);
 	return (nb);
+}
+
+char	**free_split(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (NULL);
 }

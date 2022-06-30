@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:04:30 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 20:51:40 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 10:04:44 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,10 +119,10 @@ void	ft_print_target_a(t_stack *b)
 void	ft_print_labor_in_a(t_stack *b)
 {
 	ft_printf("\n");
-	ft_printf("labor in a\n-------------\n");
+	ft_printf("moves in a\n-------------\n");
 	while (b)
 	{
-		ft_printf(" %4d", b->labor_in_a);
+		ft_printf(" %4d", b->moves_in_a);
 		b = b->next;
 		ft_printf("\n");
 	}
@@ -134,10 +134,10 @@ void	ft_print_labor_in_a(t_stack *b)
 void	ft_print_labor_in_b(t_stack *b)
 {
 	ft_printf("\n");
-	ft_printf("labor in b\n-------------\n");
+	ft_printf("moves in b\n-------------\n");
 	while (b)
 	{
-		ft_printf(" %4d", b->labor_in_b);
+		ft_printf(" %4d", b->moves_in_b);
 		b = b->next;
 		ft_printf("\n");
 	}
@@ -145,4 +145,3 @@ void	ft_print_labor_in_b(t_stack *b)
 	ft_printf("\n");
 	return ;
 }
-

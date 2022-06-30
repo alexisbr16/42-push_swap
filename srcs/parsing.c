@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:13:26 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/30 01:05:36 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 08:55:57 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,10 @@ static int	check_duplicate(t_stack *stack, int value)
 	return (1);
 }
 
-static char	**free_split(char **str)
+static int	ft_error_args(char **tab, t_stack *stack)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-	return (NULL);
+	free_split(tab);
+	return (ft_stackfree(stack));
 }
 
 int	ft_get_args(int ac, char **av, t_stack **stack)
@@ -82,10 +74,10 @@ int	ft_get_args(int ac, char **av, t_stack **stack)
 		{
 			arg = tab[j];
 			if (!check_number(arg) || !check_int(arg))
-				return (ft_stackfree(*stack)); // TODO : surement ajouter free_split
+				return (ft_error_args(tab, *stack));
 			number = ft_atoi(arg);
 			if (!check_duplicate(*stack, number))
-				return (ft_stackfree(*stack)); // TODO : surement ajouter free_split
+				return (ft_error_args(tab, *stack));
 			ft_stackadd_back(stack, ft_stacknew(number));
 			j++;
 		}
