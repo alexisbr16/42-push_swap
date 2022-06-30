@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 12:00:15 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/30 14:34:22 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 14:41:11 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static void	ft_keep_do_it(t_stack **a, t_stack **b, char *input)
 		ft_stackfree(*a);
 		ft_stackfree(*b);
 		ft_putendl_fd("Error", 2);
+		exit (1);
 	}
 }
 
@@ -56,7 +57,7 @@ static void	ft_do_it(t_stack **a, t_stack **b, char *input)
 		ft_rotate(b);
 	}
 	else
-		ft_keep_do_it(a, b, input);	
+		ft_keep_do_it(a, b, input);
 }
 
 static void	ft_verify_and_end(t_stack **a, t_stack **b)
@@ -68,7 +69,6 @@ static void	ft_verify_and_end(t_stack **a, t_stack **b)
 	ft_stackfree(*a);
 	ft_stackfree(*b);
 }
-
 
 int	main(int ac, char **av)
 {
