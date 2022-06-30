@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 12:00:15 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/30 14:41:11 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/06/30 15:21:30 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void	ft_keep_do_it(t_stack **a, t_stack **b, char *input)
 	{
 		ft_stackfree(*a);
 		ft_stackfree(*b);
+		free(input);
 		ft_putendl_fd("Error", 2);
 		exit (1);
 	}
