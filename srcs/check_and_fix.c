@@ -6,7 +6,7 @@
 /*   By: abrisse <abrisse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 18:20:14 by abrisse           #+#    #+#             */
-/*   Updated: 2022/06/29 23:18:42 by abrisse          ###   ########.fr       */
+/*   Updated: 2022/07/01 09:00:44 by abrisse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_is_sort_not_align(t_stack *stack)
 	t_stack	*next;
 	t_stack	*move;
 
+	if (!stack)
+		return (0);
 	len = ft_stack_len(stack);
 	move = ft_stack_min(stack);
 	while (--len)
